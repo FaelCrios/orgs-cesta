@@ -1,18 +1,19 @@
 import React, { Fragment } from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet} from "react-native";
 import TextArea from "../../../components/Text";
-
+import Button from '../../../components/Button'
 
 const PanelDescription = ({
-  productTittle,
+  productTitle,
   productDescription,
   vendorName,
   vendorLogo,
   price,
+  button,
 }) => {
   return (
     <Fragment>
-      <TextArea style={styles.productTittle}>{productTittle}</TextArea>
+      <TextArea style={styles.productTitle}>{productTitle}</TextArea>
 
       <View style={styles.vendor}>
         <Image source={vendorLogo} style={styles.vendorLogo} />
@@ -23,12 +24,13 @@ const PanelDescription = ({
         {productDescription}
       </TextArea>
       <TextArea style={styles.price}>{price}</TextArea>
+      <Button text={button} style={styles.button} onPress={() => {}}/>
     </Fragment>
   );
 };
 
 const styles = StyleSheet.create({
-  productTittle: {
+  productTitle: {
     fontSize: 26,
     lineHeight: 42,
     color: "#464646",
@@ -44,6 +46,9 @@ const styles = StyleSheet.create({
   vendorLogo: {
     width: 32,
     height: 32,
+  },
+  button:{
+    marginTop: 16,
   },
 
   vendorName: {
